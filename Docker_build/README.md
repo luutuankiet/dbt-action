@@ -1,12 +1,24 @@
 # how to build the Docker image and send to Docker Hub
 
-update the references in the Dockerfile to current ones.
+- update the references in the Dockerfile to current ones
+- build the image via podman
+- push the updated image
 
-using the dbt [Dockerfile](https://github.com/dbt-labs/dbt-core/blob/main/docker/Dockerfile) as a template.
 
-`docker build --tag ghcr.io/mwhitaker/dbt_all:v1.7.3  --target dbt-all .`
+## Build the image via podman
 
-export CR_PAT=ghp_xxxx
-echo $CR_PAT | docker login ghcr.io -u mwhitaker --password-stdin
+```
+cd Docker_build
+podman build --arch=x86_64 --tag ghcr.io/bzillins/dbt_all:v1.8.3 .
+podman push ghcr.io/bzillins/dbt_all:v1.8.3 ghcr.io/bzillins/dbt_all:v1.8.3
+```
 
-`docker push ghcr.io/mwhitaker/dbt_all:v1.7.3`
+
+## Installing podman
+```brew install podman
+podman machine init
+podman machine start
+```
+
+## Configuring PAT for Podman to Github Push
+[Bloggy Blog](https://geraldonit.com/2022/08/30/manually-publish-images-to-github-container-registry-ghcr/)
