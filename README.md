@@ -3,7 +3,7 @@
 A GitHub Action to run [dbt](https://www.getdbt.com) commands in a Docker container. It uses a docker image built via the instructions in Docker_build. You can use [dbt commands](https://docs.getdbt.com/reference/dbt-commands) such as `run`, `test` and `debug`. This action captures the dbt console output for use in subsequent steps.
 
 ### dbt version
-The current version of dbt is **1.8.3**. 
+The current version of dbt is **1.9.0**. 
 
 ## Usage
 

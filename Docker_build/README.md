@@ -9,8 +9,8 @@
 
 ```
 cd Docker_build
-podman build --arch=x86_64 --tag ghcr.io/bzillins/dbt_all:v1.8.3 .
-podman push ghcr.io/bzillins/dbt_all:v1.8.3 ghcr.io/bzillins/dbt_all:v1.8.3
+podman build --arch=x86_64 --tag ghcr.io/luutuankiet/dbt_all:v1.9.0 .
+podman push ghcr.io/luutuankiet/dbt_all:v1.9.0 ghcr.io/luutuankiet/dbt_all:v1.9.0
 ```
 
 

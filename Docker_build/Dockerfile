@@ -16,12 +16,12 @@ FROM python:3.10.7-slim-bullseye as base
 # N.B. The refs updated automagically every release via bumpversion
 # N.B. dbt-postgres is currently found in the core codebase so a value of dbt-core@<some_version> is correct
 
-ARG dbt_core_ref=dbt-core@v1.8.3
-ARG dbt_postgres_ref=dbt-core@v1.8.3
-ARG dbt_snowflake_ref=dbt-snowflake@v1.8.3
-ARG dbt_spark_ref=dbt-spark@v1.8.0
-ARG dbt_databricks_ref=dbt-databricks@v1.8.3
-ARG dbt_clickhouse_ref=dbt-clickhouse@v1.8.0
+ARG dbt_core_ref=dbt-core@v1.9.0
+ARG dbt_postgres_ref=dbt-core@v1.9.0
+ARG dbt_snowflake_ref=dbt-snowflake@v1.9.0
+ARG dbt_spark_ref=dbt-spark@v1.9.0
+ARG dbt_databricks_ref=dbt-databricks@v1.9.0
+ARG dbt_clickhouse_ref=dbt-clickhouse@v1.9.0
 
 # Env vars
 ENV PYTHONIOENCODING=utf-8
@@ -51,6 +51,6 @@ python -m pip install --no-cache "git+https://github.com/ClickHouse/${dbt_clickh
 python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_snowflake_ref}#egg=dbt-snowflake" \
 python -m pip install --no-cache "git+https://github.com/databricks/${dbt_databricks_ref}#egg=dbt-databricks" \
 python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_spark_ref}#egg=dbt-spark[${dbt_spark_version}]"
-python -m pip install --no-cache dbt-duckdb==1.8.3
+python -m pip install --no-cache dbt-duckdb==1.9.0
 
 EOF
