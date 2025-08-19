@@ -1,6 +1,6 @@
-name: "w dbt action"
+name: "dbt action - forked"
 description: "Run and schedule dbt commands directly in your Github repo"
-author: "Michael Whitaker BZ edit"
+author: "luutuankiet"
 
 inputs:
   dbt_command:

@@ -46,7 +46,11 @@ RUN apt-get update \
     /tmp/* \
     /var/tmp/*
 
-RUN python -m pip install --no-cache "git+https://github.com/ClickHouse/${dbt_clickhouse_ref}#egg=dbt-clickhouse" \
-  && python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_snowflake_ref}#egg=dbt-snowflake" \
-  && python -m pip install --no-cache "git+https://github.com/databricks/${dbt_databricks_ref}#egg=dbt-databricks" \
-  && python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_spark_ref}#egg=dbt-spark[${dbt_spark_version}]"
+RUN <<EOF
+python -m pip install --no-cache "git+https://github.com/ClickHouse/${dbt_clickhouse_ref}#egg=dbt-clickhouse" \
+python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_snowflake_ref}#egg=dbt-snowflake" \
+python -m pip install --no-cache "git+https://github.com/databricks/${dbt_databricks_ref}#egg=dbt-databricks" \
+python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_spark_ref}#egg=dbt-spark[${dbt_spark_version}]"
+python -m pip install --no-cache dbt-duckdb==1.8.3
+
+EOF
